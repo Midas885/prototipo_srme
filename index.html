@@ -1,0 +1,86 @@
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - SRME</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="login-page">
+    <header class="login-header">
+        <div class="institutional-identity">
+            <img src="https://minpre.gob.do/wp-content/themes/minpre/images/bin/logo_minpre.png" alt="Escudo de la República Dominicana">
+            <span>SRME</span>
+        </div>
+        <nav class="main-menu">
+            <ul>
+                <li><a href="#">INICIO</a></li>
+                <li><a href="#">SOBRE NOSOTROS</a></li>
+                <li><a href="#">CONTACTO</a></li>
+                <li><a href="#" class="active">INICIAR SESION</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="login-container">
+            <h2>Iniciar sesión</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Nombre de usuario</label>
+                    <input type="text" id="username" placeholder="Nombre de usuario" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" placeholder="Contraseña" required>
+                    <small>Usuario por defecto: **wilson** | Contraseña por defecto: **123**</small>
+                </div>
+                <div class="options">
+                    <label>
+                        <input type="checkbox">
+                        Mantener sesión activa
+                    </label>
+                    <a href="#">¿Has olvidado tu contraseña?</a>
+                </div>
+                <button type="submit" class="login-button">Iniciar sesión</button>
+            </form>
+            <div id="error-message" style="color: red; margin-top: 10px; display: none;">Credenciales incorrectas.</div>
+            <div>
+                o <a href="#" class="register-link">Registrarse</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Detiene el envío del formulario
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+
+            // Credenciales por defecto (Usuario: wilson, Contraseña: 123)
+            const defaultUser = 'wilson';
+            const defaultPass = '123';
+
+            if (username === defaultUser && password === defaultPass) {
+                // Si las credenciales son correctas, simulamos el inicio de sesión
+                // y redirigimos al dashboard.
+                localStorage.setItem('loggedIn', 'true');
+                window.location.href = 'dashboard.html';
+            } else {
+                // Si son incorrectas, mostramos un mensaje de error
+                errorMessage.style.display = 'block';
+            }
+        });
+
+        // Verificar si ya está loggeado y redirigir
+        if (localStorage.getItem('loggedIn') === 'true') {
+            window.location.href = 'dashboard.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+
+
+# Nombre del flujo de trabajo
+name: Deploy Web Pages to GitHub Pages
+
+on:
+  # Se ejecuta cuando se realiza un push a la rama 'main'
+  push:
+    branches:
+      - main 
+  # Permite ejecutar el flujo de trabajo manualmente desde la pestaña Actions de GitHub
+  workflow_dispatch:
+
+# Permisos necesarios para que la acción pueda crear el despliegue
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Trabajos a ejecutar
+jobs:
+  build_and_deploy:
+    # Ejecutar en el último sistema operativo de Ubuntu
+    runs-on: ubuntu-latest
+    
+    # Pasos del trabajo
+    steps:
+      # 1. Checkout del código: descarga el código del repositorio
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      # 2. Configurar GitHub Pages: configura el entorno de despliegue
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      
+      # 3. Subir artefacto de despliegue: empaqueta los archivos web (HTML, CSS) 
+      #    y los prepara para el despliegue.
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Directorio que contiene los archivos a desplegar. 
+          # '.' indica la carpeta raíz del repositorio.
+          path: '.'
+      
+      # 4. Desplegar a GitHub Pages: publica el artefacto en GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

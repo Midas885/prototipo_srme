@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRME - Dr. Wilson Sánchez</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="institutional-logo">
+            <img src="https://minpre.gob.do/wp-content/themes/minpre/images/bin/logo_minpre.png" alt="Escudo">
+            <span>SRME</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active"><i class="fas fa-home"></i> Inicio</a></li>
+                <li class="section-title">Navegación</li>
+                <li><a href="#"><i class="fas fa-user-injured"></i> Pacientes</a></li>
+                <li><a href="#"><i class="fas fa-history"></i> Historial clínico</a></li>
+                <li><a href="#"><i class="fas fa-user-plus"></i> Registrar consulta</a></li>
+                <li><a href="#"><i class="fas fa-notes-medical"></i> Consultas</a></li>
+                <li><a href="#"><i class="fas fa-prescription-bottle-alt"></i> Recetas médicas</a></li>
+                <li><a href="#"><i class="fas fa-flask"></i> Solicitudes de Laboratorio</a></li>
+                <li><a href="#"><i class="fas fa-chart-line"></i> Resultados de Laboratorio</a></li>
+                <li><a href="#"><i class="fas fa-share"></i> Referimientos</a></li>
+            </ul>
+            <ul class="bottom-links">
+                <li><a href="#"><i class="fas fa-user-circle"></i> Cuenta</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Ajuste</a></li>
+                <li><a href="#"><i class="fas fa-question-circle"></i> Ayuda</a></li>
+                <li><a href="#" id="logout-button"><i class="fas fa-sign-out-alt"></i> Salir</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="top-bar">
+            <div class="header-main">
+                <div class="welcome-message">
+                    Buenos Días Dr. Wilson Sánchez
+                </div>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar paciente">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="user-info">
+                <div class="name-role">
+                    <div class="name">Dr. Wilson Sánchez</div>
+                    <div class="role">DOCTOR</div>
+                </div>
+                <div class="avatar">
+                    <img src="https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_640.png" alt="User Avatar">
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-content">
+            <div class="dashboard-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Consultas para hoy</h3>
+                        <i class="fas fa-ellipsis-v options-icon"></i>
+                    </div>
+                    <div class="consultas-list">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Fecha</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Pamela</td>
+                                    <td>Torrez</td>
+                                    <td>Nov 26 2025</td>
+                                </tr>
+                                <tr>
+                                    <td>Josue</td>
+                                    <td>Muños</td>
+                                    <td>Nov 26 2025</td>
+                                </tr>
+                                <tr>
+                                    <td>Fernanda</td>
+                                    <td>Divair</td>
+                                    <td>Nov 26 2025</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <span class="observation">Observaciones</span>
+                    </div>
+                    <div class="consultas-actions">
+                        <button class="history-button"><i class="fas fa-history"></i> Historial</button>
+                        <button class="add-button"><i class="fas fa-plus"></i> Agregar</button>
+                    </div>
+                </div>
+
+                <div class="card results-section">
+                    <div class="results-header">
+                        <h3>Resultados</h3>
+                        <div class="sort-options">
+                            Busacar por <select><option>Recientes</option></select>
+                        </div>
+                    </div>
+                    <div class="results-actions">
+                        <button><i class="fas fa-print"></i> Print</button>
+                        <button><i class="fas fa-share-alt"></i> Share</button>
+                        <button><i class="fas fa-search"></i> Buscar pacientes</button>
+                    </div>
+                    <div class="results-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nombres</th>
+                                    <th>Fecha</th>
+                                    <th>Especialidad</th>
+                                    <th>Result</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Jose motos</td>
+                                    <td>Today</td>
+                                    <td>Medicina Familiar</td>
+                                    <td class="status-done"><i class="fas fa-check-circle"></i> Done</td>
+                                </tr>
+                                <tr>
+                                    <td>Claudio Store</td>
+                                    <td>Today</td>
+                                    <td>Medicina Familiar</td>
+                                    <td class="status-done"><i class="fas fa-check-circle"></i> Done</td>
+                                </tr>
+                                <tr>
+                                    <td>Chidi Barber</td>
+                                    <td>Today</td>
+                                    <td>Medicina Familiar</td>
+                                    <td class="status-done"><i class="fas fa-check-circle"></i> Done</td>
+                                </tr>
+                                <tr>
+                                    <td>Cahaya Dewi</td>
+                                    <td>Today</td>
+                                    <td>Medicina Familiar</td>
+                                    <td class="status-pending"><i class="fas fa-hourglass-half"></i> Pending</td>
+                                </tr>
+                                <tr>
+                                    <td>Yael Amari</td>
+                                    <td>Yesterday</td>
+                                    <td>Medicina Familiar</td>
+                                    <td class="status-done"><i class="fas fa-check-circle"></i> Done</td>
+                                </tr>
+                                <tr>
+                                    <td>Larana, Inc.</td>
+                                    <td>08:00 AM</td>
+                                    <td>Medicina Familiar</td>
+                                    <td class="status-done"><i class="fas fa-check-circle"></i> Done</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="view-more-link">
+                        <a href="#">Mirar más resultados</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Verificación de sesión al cargar la página
+        if (localStorage.getItem('loggedIn') !== 'true') {
+            // Si no está loggeado, redirige a la página de login
+            window.location.href = 'index.html';
+        }
+
+        // Funcionalidad de Cerrar Sesión
+        document.getElementById('logout-button').addEventListener('click', function(event) {
+            event.preventDefault();
+            // Elimina la bandera de sesión activa
+            localStorage.removeItem('loggedIn');
+            // Redirige al login
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
